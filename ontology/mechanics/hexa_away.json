@@ -1,0 +1,28 @@
+{
+  "game": "Hexa Away",
+  "publisher": "Goodroid",
+  "market": {"revenue": "$19M lifetime IAP", "downloads": "25.5M", "trend": "arrow puzzles — массовый скачивательный тренд (T9)"},
+  "core": {
+    "input_verb": "tap_to_launch (тап по гексу — плитка летит по своей стрелке)",
+    "physics_material": "none (дискретная логика полёта по сетке)",
+    "spatial_topology": "hex_grid + blockers (гексагональная решётка, серые блоки-препятствия, зелёные точки выхода)"
+  },
+  "tension_vectors": [
+    "order_dependency (плитку можно выпустить только если путь свободен — порядок решения)",
+    "moves_limit (42 хода — ресурс)",
+    "booster_dependency (бомба/молот/пресс — монетизация застреваний)"
+  ],
+  "reward_loop": {
+    "juice": ["цепные разлёты плиток", "очистка поля"],
+    "win_condition": "выпустить все плитки с поля"
+  },
+  "modifiers": ["бомбы", "многоклеточные плитки", "вращающиеся камни-препятствия"],
+  "meta_layer": "нет выраженной",
+  "session_shape_seconds": 40,
+  "browser_feasibility": {"sim_type": "none (чистая логика)", "draw_calls": "минимальные", "risk": "нулевой — идеален для веба"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "research/screens/hexa_away/yt_thumbs/ApcXsm7X32I.jpg — Level 1056: гекс-сетка со стрелками, Moves: 42, серые блоки, зелёные выходы, 4 бустера"
+  ],
+  "confidence": {"core": 0.85, "tension": 0.8, "meta": 0.6}
+}

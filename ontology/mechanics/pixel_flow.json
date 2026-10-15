@@ -1,0 +1,29 @@
+{
+  "game": "Pixel Flow",
+  "publisher": "Loom Games",
+  "market": {"revenue": "$140M lifetime IAP", "downloads": "34M", "trend": "conveyor belt puzzles — доминирующий тренд H1 2026"},
+  "core": {
+    "input_verb": "tap_to_dispatch (выпустить цветной поток/булавку в трассу)",
+    "physics_material": "rigid_units_on_tracks (жесткие юниты на направляющих, без свободной физики)",
+    "spatial_topology": "canvas_grid + fixed_rails (сетка пиксель-арта + фиксированные трассы подачи сверху и снизу)"
+  },
+  "tension_vectors": [
+    "buffer_unknown_color (контейнеры с '?' — цвет откроется позже)",
+    "limited_capacity_counters (счётчики 10/20/20/20 на каждую подачу)",
+    "order_dependency (порядок выпуска потоков влияет на заполняемость)"
+  ],
+  "reward_loop": {
+    "juice": ["pixel_art_проявление (картинка собирается пост за постом)", "полное заполнение canvas"],
+    "win_condition": "заполнить весь пиксель-арт без блокировки потоков"
+  },
+  "modifiers": ["новые типы трасс", "многоцветные зоны", "препятствия на rails"],
+  "meta_layer": "галерея собранных пиксель-артов",
+  "session_shape_seconds": 60,
+  "browser_feasibility": {"sim_type": "none (дискретная логика, не физика)", "draw_calls": "низкие (2D сетка + спрайты)", "risk": "минимальный — идеальный жанр для веба"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "research/screens/pixel_flow/yt_thumbs/r4KjljWhlm8.jpg — Level 704: пиксель-арт петуха, трассы сверху и снизу, очереди булавок со счётчиками 10/20/20/20 и '?'",
+    "research/screens/pixel_flow/itunes_shots/shot2_c.png — Level 17: конвейерная рамка вокруг поросёнка, контейнеры 20 с '?', монеты 560, прогресс 5/5"
+  ],
+  "confidence": {"core": 0.75, "tension": 0.7, "meta": 0.5}
+}

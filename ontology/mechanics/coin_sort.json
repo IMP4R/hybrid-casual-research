@@ -1,0 +1,28 @@
+{
+  "game": "Coin Sort",
+  "publisher": "Lion Studios Plus / MoodGames",
+  "market": {"revenue": "$13M lifetime IAP", "downloads": "11.2M", "trend": "sorting games (T14) в мердж-скине"},
+  "core": {
+    "input_verb": "tap_to_merge (тап по монете — мерж в стек того же номинала)",
+    "physics_material": "none (дискретные стеки)",
+    "spatial_topology": "slot_grid (сетка слотов с замками, стеки монет 1/2/3 в медь/серебро/золото)"
+  },
+  "tension_vectors": [
+    "slot_locks (замки слотов — прогрессия открывается)",
+    "deal_cost ($10 за раздачу — экономический ресурс)",
+    "stack_overflow (переполнение номинала без мержа)"
+  ],
+  "reward_loop": {
+    "juice": ["merge_pop", "апгрейд номинала 1→2→3"],
+    "win_condition": "собрать целевые стеки/суммы"
+  },
+  "modifiers": ["новые металлы", "бустеры-мержи", "ежедневные наборы"],
+  "meta_layer": "экономика монет, апгрейды",
+  "session_shape_seconds": 90,
+  "browser_feasibility": {"sim_type": "none", "draw_calls": "минимальные", "risk": "нулевой"},
+  "invariant_check": {"R1": "pass", "R2": "pass (мерж = единственный глагол)", "R3": "pass", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "research/screens/coin_sort/play_shots/shot3.jpg — сетка стеков с замками, кнопки DEAL $10 и MERGE, курсор-тап по золотой «3»"
+  ],
+  "confidence": {"core": 0.75, "tension": 0.7, "meta": 0.6}
+}

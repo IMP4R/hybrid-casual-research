@@ -1,0 +1,30 @@
+{
+  "game": "Yarn Loop: Knit Puzzle",
+  "publisher": "Combo Games",
+  "market": {"revenue": "$30.5M lifetime IAP", "downloads": "7.4M", "trend": "conveyor belt puzzles (T4), клон-скелет Pixel Flow в вязаном скине"},
+  "core": {
+    "input_verb": "tap_to_feed (подать катушку-цвет в вязальную иглу)",
+    "physics_material": "rigid_units_on_tracks (катушки нитей, дискретная подача)",
+    "spatial_topology": "canvas_grid + needle_routers (пиксель-канва; иглы со счётчиками как маршрутизаторы; очереди цветных катушек снизу)"
+  },
+  "tension_vectors": [
+    "buffer_counters (счётчики 5/6 на иглах, запасы 6/6/5/6 на катушки)",
+    "color_queue_order (очередность цветов для узора)",
+    "pattern_complexity (зоны канвы требуют точного цвета)"
+  ],
+  "reward_loop": {
+    "juice": ["knit_texture_fill (вязаная текстура проступает на канве)", "ASMR-вязание"],
+    "win_condition": "довязать пиксель-арт"
+  },
+  "modifiers": ["многоигольные узоры", "меланжевые катушки", "сложные маршруты игл"],
+  "meta_layer": "галерея вязаных картин",
+  "session_shape_seconds": 60,
+  "browser_feasibility": {"sim_type": "none", "draw_calls": "низкие", "risk": "минимальный"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "research/screens/yarn_loop/yt_thumbs/4ZIbE50Jbfk.jpg — правая половина: канва с енотом, катушки цветов 6/6/5/6, иглы со счётчиками 5/6",
+    "games_seed.csv: Yarn Loop $30.5M | 7.4M dl (TREND 4, conveyor belt)"
+  ],
+  "confidence": {"core": 0.8, "tension": 0.75, "meta": 0.5},
+  "note": "Доказательство тезиса канала: три топ-конвейерные игры (Pixel Flow/Yarn Loop/Sand Loop = $189M+) делят один скелет «канва + цветные питатели + буферы», меняется только материал (нити/песок) и роутинг."
+}

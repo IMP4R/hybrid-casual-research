@@ -1,0 +1,28 @@
+{
+  "game": "Foodie Sizzle",
+  "publisher": "ABI Global",
+  "market": {"revenue": "$8.4M lifetime IAP", "downloads": "22.9M", "trend": "barbeque based puzzles (T: cooking/ASMR-сегмент)"},
+  "core": {
+    "input_verb": "choose_and_process (выбор ингредиента → гринд/готовка жестом)",
+    "physics_material": "soft_deform_props (мягкие деформируемые 3D-пропы, low-poly)",
+    "spatial_topology": "fixed_3d_scene (стол-сцена, ступка/пан, карточный выбор снизу)"
+  },
+  "tension_vectors": [
+    "order_of_recipe (порядок ингредиентов задан заказом)",
+    "gross_out_choice (выбор из дискретных опций — мышь/какашка/таракан/муравьи)",
+    "completion_progress (порция готовится по шагам)"
+  ],
+  "reward_loop": {
+    "juice": ["grind_smash (раздавливание ступкой)", "sizzle_ASMR", "подача готового блюда"],
+    "win_condition": "выполнить заказ-рецепт"
+  },
+  "modifiers": ["новые рецепты", "сезонные наборы ингредиентов", "клиенты-персонажи"],
+  "meta_layer": "ресторан/разблокировка блюд",
+  "session_shape_seconds": 60,
+  "browser_feasibility": {"sim_type": "декали + процедурные деформации (без реального softbody)", "draw_calls": "средние (3D low-poly)", "risk": "низкий при лоуполи-ассетах"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass (нет таймера в ядре)", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "research/screens/foodie_sizzle/play_shots/shot3.png — ступка с пестиком, 'Choose ingredient', 4 карточки (мышь, какашка, таракан, муравьи), праздничный стол 3D low-poly"
+  ],
+  "confidence": {"core": 0.7, "tension": 0.6, "meta": 0.5}
+}

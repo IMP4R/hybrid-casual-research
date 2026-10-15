@@ -1,0 +1,29 @@
+{
+  "game": "Marble Sort",
+  "publisher": "Voodoo",
+  "market": {"revenue": "$22.6M lifetime IAP", "downloads": "17.1M", "trend": "marble sort — физика встречает конвейерную сортировку (T6)"},
+  "core": {
+    "input_verb": "tap_to_drop (толкнуть/выпустить шарики в момент окна)",
+    "physics_material": "rigid_spheres (катящиеся шарики, легкая физика столкновений)",
+    "spatial_topology": "circular_belt + sort_bins (непрерывная круговая лента, сеты-приёмники по цвету)"
+  },
+  "tension_vectors": [
+    "belt_never_stops (лента не останавливается — окно тайминга)",
+    "color_mismatch_penalty (шарик не того цвета в приёмник)",
+    "queue_pressure (шарики скапливаются, если не успеваешь)"
+  ],
+  "reward_loop": {
+    "juice": ["physics_roll (физика качения)", "перелив в правильный бин"],
+    "win_condition": "рассортировать поток без переполнения"
+  },
+  "modifiers": ["ускорение ленты", "многоканальные развилки", "липкие/тяжелые шарики"],
+  "meta_layer": "скины шариков/локаций",
+  "session_shape_seconds": 30,
+  "browser_feasibility": {"sim_type": "rigid_bodies_lite (<100 тел — CPU справится)", "draw_calls": "низкие", "risk": "низкий"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass (тайминг и есть ядро, релакса нет)", "R4": "pass", "R5": "pass"},
+  "evidence": [
+    "games_seed.csv: «circular belt never stops, timing matters as much as logic» (видео 14 Puzzle Trends, TREND 6)",
+    "research/screens/marble_sort/ — досье: itunes 5 скринов + 4 YT-миниатюры + 6 скринов Play"
+  ],
+  "confidence": {"core": 0.65, "tension": 0.7, "meta": 0.4}
+}

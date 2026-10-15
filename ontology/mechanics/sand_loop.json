@@ -1,0 +1,29 @@
+{
+  "game": "Sand Loop",
+  "publisher": "Voodoo",
+  "market": {"revenue": "$19.1M lifetime IAP", "downloads": "9.5M", "trend": "conveyor belt puzzles (T4) + песочная физика"},
+  "core": {
+    "input_verb": "tap_to_release (открыть поток песка из выбранного ведра)",
+    "physics_material": "granular_sand (сыпучий песок, shader-side симуляция)",
+    "spatial_topology": "canvas_grid + belt_loop + tray_routing (пиксель-канвас, круговой конвейер, лоток с вёдрами и маршрутизацией: ключи, трубы, нумерованные плиты)"
+  },
+  "tension_vectors": [
+    "wrong_color_risk (не то ведро → чужой цвет на канве)",
+    "bucket_unlock_gates (нумерованные плиты 2/4/4 и ключи — последовательность доступа)",
+    "belt_timing (круговой конвейер не останавливается — тайминг подачи)"
+  ],
+  "reward_loop": {
+    "juice": ["sand_fill_texture (песок сыплется и заполняет текстуру пиксель-арта)", "ASMR-сыпучесть"],
+    "win_condition": "закрасить картину, израсходовав вёдра в правильном порядке"
+  },
+  "modifiers": ["замороженные вёдра", "смешиваемые цвета", "новые типы маршрутизаторов"],
+  "meta_layer": "коллекция картин",
+  "session_shape_seconds": 45,
+  "browser_feasibility": {"sim_type": "shader_particles (песок — compute/WGSL)", "draw_calls": "средние", "risk": "умеренный: песок обязан быть shader-side по R5"},
+  "invariant_check": {"R1": "pass", "R2": "pass", "R3": "pass (тайминг конвейера совместим с релаксом заливки)", "R4": "pass", "R5": "внимание: песок только GPU"},
+  "evidence": [
+    "research/screens/sand_loop/play_shots/shot4.png — Level 70: канва с попугаем, конвейер 0/5, лоток с вёдрами, ключи и трубы, маркетинг-плашка снизу",
+    "описание тренда: «circular belt never stops, timing matters as much as logic» (games_seed.csv, видео 14 Puzzle Trends)"
+  ],
+  "confidence": {"core": 0.8, "tension": 0.75, "meta": 0.5}
+}
